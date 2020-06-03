@@ -43,8 +43,7 @@ export const answerQuestion = (courseId: number, data: AnswerSubmitState) =>
 
     try {
 
-      const response: AxiosResponse<AnswerSubmitResponseState> = await axios
-        .post(`${api.question.answer}?username=${username}`, data);
+    const response: AxiosResponse<AnswerSubmitResponseState> = await axios.post(`${api.question.answer}?username=${username}&course_id=${courseId}`, data);
 
       if(response.data.alternative_status) {
         alert('Correto');
