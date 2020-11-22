@@ -1,15 +1,15 @@
-import { Theme as MuiTheme, createMuiTheme } from '@material-ui/core/styles';
+import { Theme as MuiTheme, createMuiTheme } from "@material-ui/core/styles";
 
 export interface Theme extends MuiTheme {
   sidebar: {
-    width: number
-    widthCollapsed: number
-    background: string
-    color: string
-  }
+    width: number;
+    widthCollapsed: number;
+    background: string;
+    color: string;
+  };
   header: {
-    background: string
-  }
+    background: string;
+  };
 }
 
 const baseTheme = createMuiTheme({
@@ -36,32 +36,32 @@ const baseTheme = createMuiTheme({
         minWidth: 0,
       },
       contained: {
-        boxShadow: 'none',
-        '&:active': {
-          boxShadow: 'none',
+        boxShadow: "none",
+        "&:active": {
+          boxShadow: "none",
         },
-        '&:focus': {
-          boxShadow: 'none',
+        "&:focus": {
+          boxShadow: "none",
         },
       },
       containedSecondary: {
-        color: '#fff',
-        '&:hover': {
-          backgroundColor: 'rgb(118, 195, 21)',
+        color: "#fff",
+        "&:hover": {
+          backgroundColor: "rgb(118, 195, 21)",
         },
       },
     },
     MuiButtonGroup: {
       root: {
-        boxShadow: 'none',
+        boxShadow: "none",
       },
       contained: {
-        boxShadow: 'none',
-        '&:active': {
-          boxShadow: 'none',
+        boxShadow: "none",
+        "&:active": {
+          boxShadow: "none",
         },
-        '&:focus': {
-          boxShadow: 'none',
+        "&:focus": {
+          boxShadow: "none",
         },
       },
     },
@@ -73,49 +73,49 @@ const baseTheme = createMuiTheme({
   },
   palette: {
     secondary: {
-      main: '#43a047', //indigo[600],
+      main: "#43a047", //indigo[600],
     },
     primary: {
-      main: '#1b5e20', //'#619f30',
+      main: "#1b5e20", //'#619f30',
     },
   },
   typography: {
     h1: {
-      fontSize: '2rem',
+      fontSize: "2rem",
     },
     h2: {
-      fontSize: '1.8rem',
+      fontSize: "1.8rem",
     },
     h3: {
-      fontSize: '1.6rem',
+      fontSize: "1.6rem",
     },
     h4: {
-      fontSize: '1.4rem',
+      fontSize: "1.4rem",
     },
     h5: {
-      fontSize: '1.2rem',
+      fontSize: "1.2rem",
     },
     h6: {
-      fontSize: '1rem',
+      fontSize: "1rem",
     },
   },
-})
+});
 
 const adminTheme = {
   header: {
-    background: '#fff',
+    background: "#fff",
   },
   sidebar: {
     width: 255,
     widthCollapsed: baseTheme.spacing(7),
-    background: '#4a4d5a;',
-    color: '#fff',
+    background: "#4a4d5a;",
+    color: "#fff",
   },
-}
+};
 
 const theme = {
   ...baseTheme,
   ...adminTheme,
-}
+};
 
 export default theme;

@@ -1,15 +1,20 @@
-import { createSelector } from 'reselect';
+import { createSelector } from "reselect";
 
-import { ApplicationState } from '../../state';
+import { ApplicationState } from "../../state";
 
 const getQuestion = (state: ApplicationState) => state.question;
 
-export const getQuestionState = createSelector(
+export const getQuestionDetailState = createSelector(
   getQuestion,
-  (question) => question
+  ({ question }) => question
 );
 
-// export const isLoggedIn = createSelector(
-//   getQuestion,
-//   ({ status }) => status
-// );
+export const getQuestionFetchingState = createSelector(
+  getQuestion,
+  ({ isFetching }) => isFetching
+);
+
+export const getQuestionNumberState = createSelector(
+  getQuestion,
+  ({ number }) => number
+);

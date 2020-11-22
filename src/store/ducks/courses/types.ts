@@ -1,7 +1,7 @@
 export enum CoursesTypes {
-  GET_REQUEST = '@courses/GET_REQUEST',
-  GET_SUCCESS = '@courses/GET_SUCCESS',
-  GET_FAILURE = '@courses/GET_FAILURE',
+  GET_REQUEST = "@courses/GET_REQUEST",
+  GET_SUCCESS = "@courses/GET_SUCCESS",
+  GET_FAILURE = "@courses/GET_FAILURE",
 }
 
 export interface CourseState {
@@ -30,6 +30,7 @@ interface FailureCoursesActionType {
   payload: string;
 }
 
-export type CoursesActionTypes = RequestCoursesActionType | 
-  SuccessCoursesActionType | 
-  FailureCoursesActionType;
+export type CoursesActionTypes =
+  | RequestCoursesActionType
+  | SuccessCoursesActionType
+  | FailureCoursesActionType;

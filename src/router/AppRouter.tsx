@@ -1,19 +1,19 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Login from '../pages/Login';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import Login from "../pages/Login";
 
-import LoggedInRouter from './LoggedInRouter';
-import PrivateRoute from './PrivateRoute';
+import LoggedInRouter from "./LoggedInRouter";
+import PrivateRoute from "./PrivateRoute";
 
 const AppRouter: React.FC = () => {
   return (
-    <Router>
-      <Switch>
-        <Route path="/login" component={Login} />
-        <PrivateRoute path="/" component={LoggedInRouter} />
-      </Switch>
-    </Router>
+    <Switch>
+      <Route path="/login">
+        <Login />
+      </Route>
+      <PrivateRoute path="/" component={LoggedInRouter} />
+    </Switch>
   );
-}
+};
 
 export default AppRouter;

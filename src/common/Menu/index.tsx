@@ -1,11 +1,10 @@
-import React from 'react';
-import Toolbar from '@material-ui/core/Toolbar';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Toolbar from "@material-ui/core/Toolbar";
+import { Link } from "react-router-dom";
 
-import { useStyles } from './styles';
+import { useStyles } from "./styles";
 
-const Menu: React.FC = () =>  {
-
+const Menu: React.FC = () => {
   const classes = useStyles();
 
   return (
@@ -15,11 +14,7 @@ const Menu: React.FC = () =>  {
         variant="dense"
         className={classes.toolbarSecondary}
       >
-        <Link
-          color="inherit"
-          to="/questions"
-          className={classes.toolbarLink}
-        >
+        <Link color="inherit" to="/questions" className={classes.toolbarLink}>
           Questões
         </Link>
 
@@ -30,10 +25,9 @@ const Menu: React.FC = () =>  {
         >
           Usuários
         </Link>
-
       </Toolbar>
     </>
   );
-}
+};
 
 export default Menu;

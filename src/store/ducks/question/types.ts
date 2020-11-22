@@ -23,11 +23,16 @@ export interface AnswerSubmitResponseState {
   readonly alternative_status: boolean;
 }
 
+export interface QuestionDetailState {
+  readonly pk: number;
+  readonly content: string;
+  readonly alternatives: [AlternativeState];
+}
+
 export interface QuestionState {
   readonly pk: number;
   readonly number: number;
-  readonly content: string;
-  readonly alternatives: [AlternativeState];
+  readonly question: QuestionDetailState;
   readonly isFetching: boolean;
   readonly error: boolean;
 }

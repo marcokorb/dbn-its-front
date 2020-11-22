@@ -3,7 +3,7 @@ import { Reducer } from 'redux';
 import { UserActionTypes, UserState, UserTypes } from './types';
 
 let INITIAL_STATE: UserState = {
-  pk: 1,
+  pk: null,
   username: '',
   status: false,
   isFetching: false,
@@ -19,8 +19,6 @@ try {
   INITIAL_STATE.status = true;
 
 } catch(e) {}
-
-console.log(INITIAL_STATE);
 
 const reducers: Reducer<UserState, UserActionTypes> = produce(
   (draft: Draft<UserState>, action: UserActionTypes) => {
@@ -39,6 +37,16 @@ const reducers: Reducer<UserState, UserActionTypes> = produce(
         draft.isFetching = false;
         draft.error = true;
         break;
+      case UserTypes.LOGOUT_REQUEST:
+        break;
+      case UserTypes.LOGOUT_SUCCESS:
+        draft.pk = null;
+        draft.username = null;
+        draft.status = false;
+        break;
+      case UserTypes.LOGOUT_FAILURE:
+          draft.error = true;
+          break;
       default:
           break;
     }

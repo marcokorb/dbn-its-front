@@ -1,10 +1,7 @@
-import { createSelector } from 'reselect';
+import { createSelector } from "reselect";
 
-import { ApplicationState } from '../../state';
+import { ApplicationState } from "../../state";
 
 const geCoursesState = (state: ApplicationState) => state.courses;
 
-export const getCourses = createSelector(
-  geCoursesState,
-  ({items}) => items
-);
+export const getCourses = createSelector(geCoursesState, ({ items }) => items);
